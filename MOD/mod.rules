@@ -1,0 +1,242 @@
+ID = lynxzard.quarters_doors
+Name = "A bit more doors for crew quarters"
+Version = 1.0.1
+CompatibleGameVersions = ["0.20.15"]
+ModifiesMultiplayer = true
+Author = "LynxZard"
+Logo = "logo.png"
+Description = "<green><b>Mod Compatible with [0.20.15+]</b></green>\n\n"\
+			  "Slightly increases the number of doors in a crew quarters and changes the visuals to logically fit them.\n\n"
+Actions
+[
+	//code
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_med/crew_quarters_med.rules>/Part/AllowedDoorLocations"
+		With =
+		[
+			[0, -1]
+			[1, -1]
+			[-1, 0]
+			[2, 0]
+		]
+	}
+	{
+		Action = Remove
+		Remove = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/MaxDoors"
+		IgnoreIfNotExisting = true
+	}
+	//image
+	//small
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/EditorIcon"
+		With =
+		{
+			Texture
+			{
+				File = "crew_quarters_small/icon.png"
+				SampleMode = Linear
+			}
+			Size = [32, 64]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/Components/LeftDoorToggle"
+		With =
+		{
+			Type = DoorPresenceToggle
+			AdjacentCell = [0, 2]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/Components/RightDoorToggle"
+		With =
+		{
+			Type = DoorPresenceToggle
+			AdjacentCell = [0, 2]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/Components/TopOrNoneDoorComponents/Components/InteriorGraphicsTop/Floor"
+		With =
+		{
+			Layer = "floors"
+			DamageLevels
+			[
+				{
+					File = "crew_quarters_small/floor_a.png"
+					Size = [1, 2]
+				}
+				{
+					File = "crew_quarters_small/floor_a_33.png"
+					Size = [1, 2]
+				}
+				{
+					File = "crew_quarters_small/floor_a_66.png"
+					Size = [1, 2]
+				}
+			]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/Components/TopOrNoneDoorComponents/Components/InteriorGraphicsTop/OperationalDoodad"
+		With =
+		{
+			Layer = "doodads_low"
+			DamageLevels
+			[
+				{
+					AnimationFiles
+					[
+						"crew_quarters_small/doodads_on_a1.png"
+						"crew_quarters_small/doodads_on_a2.png"
+						"crew_quarters_small/doodads_on_a3.png"
+						"crew_quarters_small/doodads_on_a4.png"
+						"crew_quarters_small/doodads_on_a5.png"
+						"crew_quarters_small/doodads_on_a6.png"
+						"crew_quarters_small/doodads_on_a7.png"
+						"crew_quarters_small/doodads_on_a8.png"
+					]
+					Size = [1, 2]
+					AnimationInterval = 0.2
+				}
+			]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/Components/TopOrNoneDoorComponents/Components/InteriorGraphicsTop/Walls"
+		With =
+		{
+			Layer = "walls"
+			DamageLevels
+			[
+				{
+					File = "crew_quarters_small/walls_a.png"
+					Size = [1, 1]
+					Offset = [0, -0.5]
+				}
+				{
+					File = "crew_quarters_small/walls_a_33.png"
+					Size = [1, 2]
+				}
+				{
+					File = "crew_quarters_small/walls_a_66.png"
+					Size = [1, 2]
+				}
+			]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_small/crew_quarters_small.rules>/Part/Components/Blueprints"
+		With =
+		{
+			Type = BlueprintSprite
+			File = "crew_quarters_small/blueprints.png"
+			Size = [1, 2]
+		}
+	}
+	//med
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_med/crew_quarters_med.rules>/Part/EditorIcon"
+		With =
+		{
+			Texture
+			{
+				File = "crew_quarters_med/icon.png"
+				SampleMode = Linear
+			}
+			Size = [64, 64]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_med/crew_quarters_med.rules>/Part/Components/Graphics/Floor"
+		With =
+		{
+			Layer = "floors"
+			DamageLevels
+			[
+				{
+					File = "crew_quarters_med/floor.png"
+					Size = [2, 2]
+				}
+				{
+					File = "crew_quarters_med/floor_33.png"
+					Size = [2, 2]
+				}
+				{
+					File = "crew_quarters_med/floor_66.png"
+					Size = [2, 2]
+				}
+			]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_med/crew_quarters_med.rules>/Part/Components/Graphics/OperationalDoodad"
+		With =
+		{
+			Layer = "doodads_low"
+			DamageLevels
+			[
+				{
+					AnimationFiles
+					[
+						"crew_quarters_med/doodads_on1.png"
+						"crew_quarters_med/doodads_on2.png"
+						"crew_quarters_med/doodads_on3.png"
+						"crew_quarters_med/doodads_on4.png"
+						"crew_quarters_med/doodads_on5.png"
+						"crew_quarters_med/doodads_on6.png"
+						"crew_quarters_med/doodads_on7.png"
+						"crew_quarters_med/doodads_on8.png"
+					]
+					Size = [2, 2]
+					AnimationInterval = 0.2
+				}
+			]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_med/crew_quarters_med.rules>/Part/Components/Graphics/Walls"
+		With =
+		{
+			Layer = "walls"
+			Offset = [0, -0.5]
+			DamageLevels
+			[
+				{
+					File = "crew_quarters_med/walls.png"
+					Size = [2, 1]
+				}
+				{
+					File = "crew_quarters_med/walls_33.png"
+					Size = [2, 1]
+				}
+				{
+					File = "crew_quarters_med/walls_66.png"
+					Size = [2, 1]
+				}
+			]
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<ships/terran/crew_quarters_med/crew_quarters_med.rules>/Part/Components/Blueprints"
+		With =
+		{
+			Type = BlueprintSprite
+			File = "crew_quarters_med/blueprints.png"
+			Size = [2, 2]
+		}
+	}
+]	
